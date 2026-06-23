@@ -4,5 +4,5 @@ resource "azurerm_storage_account" "stg" {
   location                 = var.location
   account_tier             = var.account_tier
   account_replication_type = "LRS"
- 
+
 }
