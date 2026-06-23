@@ -55,6 +55,16 @@ stages:
               workingDirectory: 'D:\Agent\vsts-agent-win-x64-4.274.1\_work\2'
 
   - stage: ThirdStage
+    displayName: tfsec
+    jobs:
+      - job: tfsec
+        steps:
+          - task: tfsec@1
+            inputs:
+              version: 'v1.26.0'
+              dir: '.'
+
+  - stage: FourthStage
     displayName: Plan
     jobs:
       - job: terraformplan
@@ -78,7 +88,7 @@ stages:
               commandOptions: '-var-file="$(Build.SourcesDirectory)\infrastructure\environments\dev\terraform.tfvars"'
           
 
-  - stage: FourthStage
+  - stage: FifthStage
     displayName: ManualValidation
     jobs:
       - job: manaulvalidation
