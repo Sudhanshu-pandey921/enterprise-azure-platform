@@ -77,3 +77,14 @@ stages:
               environmentServiceNameAzureRM: 'prod-sc'
               commandOptions: '-var-file="$(Build.SourcesDirectory)\infrastructure\environments\dev\terraform.tfvars"'
           
+
+  - stage: FourthStage
+    displayName: ManualValidation
+    jobs:
+      - job: manaulvalidation
+        pool: server
+        steps:
+          - task: ManualValidation@1
+            inputs:
+              notifyUsers: 'sp2529437@gmaul.com'
+              instructions: 'Review the Terraform plan and approve the deployment'
