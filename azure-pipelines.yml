@@ -63,7 +63,7 @@ stages:
             inputs:
               provider: 'azurerm'
               command: 'init'
-              workingDirectory: 'D:\Agent\vsts-agent-win-x64-4.274.1\_work\2'
+              workingDirectory: '$(Build.SourcesDirectory)'
               backendServiceArm: 'prod-sc'
               backendAzureRmStorageAccountName: 'gurustg26'
               backendAzureRmContainerName: 'gurucnt26'
