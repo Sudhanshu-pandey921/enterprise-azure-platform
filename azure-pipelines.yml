@@ -74,7 +74,7 @@ stages:
               provider: 'azurerm'
               command: 'plan'
               workingDirectory: 'D:\Agent\vsts-agent-win-x64-4.274.1\_work\2'
-              commandOptions: '-var-file=$(Build.SourcesDirectory)\infrastructure\environments\dev\terraform.tfvars'
+              commandOptions:  '-var-file="$(System.DefaultWorkingDirectory)\Terraform\environment\dev\terraform.tfvars"'
               environmentServiceNameAzureRM: 'prod-sc'
           
           
