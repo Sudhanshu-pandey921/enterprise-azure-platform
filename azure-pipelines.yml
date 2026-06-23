@@ -11,6 +11,7 @@ parameters:
     type:  string
     default: dev
     values:
+      - dev
       - qa
       - prod
 
